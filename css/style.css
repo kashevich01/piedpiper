@@ -1,0 +1,551 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  margin: auto;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+}
+
+.container {
+  max-width: 1219px;
+  margin: 0 auto;
+  padding: 0 55px;
+}
+
+@media (max-width: 970px) {
+  .container {
+    padding: 0 20px 0 20px;
+  }
+}
+
+/* -------------------------------------ШАПКА-------------------------------------------------------------------------------------- */
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 84px;
+  background-color: #007765;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+.header_body {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.header_logo {
+  position: relative;
+  margin: 20px 0 0 0;
+  z-index: 3;
+}
+
+.header_logo img {
+  max-width: 100%;
+}
+.header_logo:hover {
+  transition: 0.3s;
+  scale: 1.2;
+}
+
+.header_list {
+  display: flex;
+  position: relative;
+  z-index: 3;
+  padding: 28px 0 0 0;
+}
+
+.header_list li {
+  list-style: none;
+}
+
+.header_link,
+.header_list span {
+  margin-left: 12px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.header_link:hover {
+  transition: 0.3s;
+  text-decoration: underline;
+  font-size: 26px;
+}
+
+.act {
+  color: #ddd;
+}
+
+@media (max-width: 767px) {
+  body.lock {
+    overflow: hidden;
+  }
+  .header {
+    height: 50px;
+  }
+  .header_body {
+    align-items: center;
+  }
+  .header_logo {
+    margin: 10px 0 0 0;
+    flex: 0 0 140px;
+  }
+  .header_burger {
+    position: relative;
+    margin: 5px 0 0 0;
+    width: 30px;
+    height: 20px;
+    z-index: 6;
+    cursor: pointer;
+  }
+  .header_burger:before,
+  .header_burger:after {
+    content: "";
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+  }
+  .header_burger span {
+    position: absolute;
+    background-color: #fff;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+  }
+  .header_burger:before {
+    top: 0;
+  }
+  .header_burger:after {
+    bottom: 0;
+  }
+  .header_burger.active span {
+    transform: scale(0);
+  }
+  .header_burger.active:before {
+    transform: rotate(45deg);
+    top: 9px;
+  }
+  .header_burger.active:after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+  .header_burger > span,
+  .header_burger > span::before,
+  .header_burger > span::after {
+    transition-duration: 0.25s;
+  }
+  .header_menu {
+    transition-duration: 0.25s;
+  }
+  .header_burger {
+    transition-duration: 0.25s;
+  }
+  .header_menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #007765;
+    padding: 30px 0 0 0;
+  }
+  .header_menu.active {
+    left: 0%;
+  }
+  .header_list {
+    flex-direction: column;
+  }
+  .header_list span {
+    display: none;
+  }
+  .header_list {
+    margin: 0 0 0 0;
+  }
+  .header_link {
+    padding: 5px 0 5px 50px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+  }
+  #problem, /* РЕШАЕТ ПРОБЛЕМУ С ЯКОРЯМИ*/
+  #PiedPiperCoin,
+  #TheTeam {
+    display: block;
+    position: relative;
+    top: -50px;
+    visibility: hidden;
+  }
+}
+/*--------------------------------------------------JUMBOTRON--------------------------------------------------------------------- */
+
+.jumbotron {
+  min-height: 403px;
+  background: url("../img/image.png") 0 0 / cover no-repeat;
+  margin-top: 84px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jumbotron p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 72px;
+  line-height: 84px;
+  text-align: center;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 767px) {
+  .jumbotron {
+    margin-top: 50px;
+    min-height: 282px;
+  }
+  .jumbotron p {
+    font-size: 50px;
+    line-height: 59px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .jumbotron {
+    min-height: 200px;
+  }
+  .jumbotron p {
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+
+/*----------------------------------THEProblem--------------------------------------------------- */
+
+.problem {
+  background-color: #eeeeee;
+  min-height: 719px;
+}
+
+.problem__title {
+  color: #007765;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 75px;
+  text-align: center;
+  padding: 48px 0 16px 0;
+  margin: 0;
+}
+
+.problem__text p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 37px;
+}
+
+@media screen and (max-width: 767px) {
+  .problem__title {
+    font-size: 45px;
+    line-height: 53px;
+    padding: 34px 0 16px 0;
+  }
+  .problem__text {
+    padding: 0 0 20px 0;
+  }
+  .problem__text p {
+    font-size: 22px;
+    line-height: 26px;
+    text-align: justify;
+  }
+  .problem {
+    min-height: 503px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .problem__title {
+    font-size: 36px;
+    line-height: 42px;
+    padding: 20px 0 16px 0;
+  }
+}
+
+/*---------------------------Hero------------------------------------------*/
+
+.hero {
+  min-height: 483px;
+  background: url("../img/hero.png") 0 0 / cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__text {
+  max-width: 893px;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 56px;
+  text-align: center;
+  color: #ffffff;
+}
+@media screen and (max-width: 767px) {
+  .hero {
+    min-height: 400px;
+  }
+  .hero__text {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .hero {
+    min-height: 360px;
+  }
+  .hero__text {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}
+
+/*---------------------------Introducing PiedPiperCoin------------------------------------------*/
+
+.pied-piper-coin {
+  min-height: 604px;
+}
+
+.pied-piper-coin__title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 75px;
+  text-align: center;
+  color: #007765;
+  padding: 48px 0 16px 0;
+}
+
+.pied-piper-coin__icon {
+  float: left;
+  margin: 0 48px 35px 0;
+  width: 115px;
+  height: 115px;
+}
+
+.pied-piper-coin__icon img {
+  width: 100%;
+  height: 100%;
+}
+.pied-piper-coin__icon:hover {
+  transition: 0.3s;
+  scale: 1.2;
+}
+.pied-piper-coin__text {
+  padding: 0;
+}
+
+.pied-piper-coin__text p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 37px;
+  margin: 0;
+  padding: 0 0 40px 0;
+}
+
+@media screen and (max-width: 767px) {
+  .pied-piper-coin__title {
+    font-size: 45px;
+    line-height: 53px;
+  }
+  .pied-piper-coin__icon {
+    margin: 16px 35px 20px 0;
+  }
+  .pied-piper-coin__text p {
+    padding: 0 0 20px 0;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .pied-piper-coin__icon {
+    margin: 16px 10px 10px 20px;
+  }
+  .pied-piper-coin__text p {
+    font-size: 22px;
+    line-height: 26px;
+    text-align: justify;
+  }
+  .pied-piper-coin__title {
+    font-size: 45px;
+    line-height: 53px;
+    padding: 12px 0 12px 0;
+  }
+  .pied-piper-coin__icon {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/*---------------------------The Team------------------------------------------*/
+
+.team {
+  min-height: 845px;
+  background: #eeeeee;
+}
+
+.team__title {
+  margin: 0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 75px;
+  text-align: center;
+  color: #007765;
+  padding: 48px 0 56px 0;
+}
+
+.team__profiles {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.team__profile {
+  flex-basis: 33.3333%;
+  text-align: center;
+  height: 231px;
+  margin-bottom: 82px;
+}
+
+.team__profile img {
+  margin-bottom: 10px;
+}
+
+.team__profile p {
+  margin: 0;
+}
+
+.team__name {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  color: #007765;
+}
+
+.team__position {
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+@media screen and (max-width: 767px) {
+  .team {
+    padding: 0;
+  }
+  .team__title {
+    font-size: 45px;
+    line-height: 53px;
+  }
+  .team__profile {
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .team__profile {
+    flex-basis: 100%;
+    margin-bottom: 40px;
+  }
+  .team__title {
+    font-size: 45px;
+    line-height: 53px;
+    padding: 34px 0 39px 0;
+  }
+}
+
+/*---------------------------footer------------------------------------------*/
+
+.footer {
+  height: 176px;
+  background: #333333;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__text {
+  width: 540px;
+  padding: 48px 0 0 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.footer__info {
+  width: 540px;
+  padding: 48px 0 0 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    height: 123px;
+  }
+  .footer__text {
+    padding: 34px 10px 0 10px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .footer__text {
+    font-size: 13px;
+    line-height: 15px;
+  }
+  .footer__info {
+    font-size: 13px;
+    line-height: 15px;
+  }
+}
+
+.curent {
+  /* РЕШАЕТ ПРОБЛЕМУ С ЯКОРЯМИ*/
+  display: block;
+  position: relative;
+  top: -84px;
+  visibility: hidden;
+}
